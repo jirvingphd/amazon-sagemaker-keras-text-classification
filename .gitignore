@@ -1,1 +1,4 @@
 .DS_Store
+data/newsCorpora.csv
+data/2pageSessions.csv
+.ipynb_checkpoints/sagemaker_keras_text_classification-checkpoint.ipynb

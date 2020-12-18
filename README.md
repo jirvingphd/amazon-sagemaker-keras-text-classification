@@ -1,3 +1,39 @@
+# MODIFIED TUTORIAL - J. Irving  - 12/19/20
+> Updating the repository so that the instructions are compatible with using SSH to remote control the virtual machine with VS Code.
+## Main Differences:
+- We will NOT go to Sagemaker's Notebook instances, we will instead first set up an `ec2` container with SSH access.
+- We will then FIRST connect to our `ec2` instance before we then use vs code to clone the training repository.
+
+### Before Following the Blog Post Listed Below, I first set up AWS Toolkit for VS CODE
+
+- [AWS Instructions for Installing AWS Toolkit for VS Code](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html)
+
+
+- Turns out this is NOT what we need for our purposes, but it had me do several steps of IAM user-generation and attaching specific policies and saving login credientials.
+    - **We will need to have AWS credentials saved on our local machine:**
+        - Instructions https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/obtain-credentials.html
+
+### Instructions 
+- Follow the instructions from this Medium blog post on ["Connecting VS Code to Develop Machine Learning Models in the AWS Cloud".](https://medium.com/@guyernest/connecting-vs-code-to-develop-machine-learning-models-in-the-aws-cloud-aa1ebd16f890)
+    - Note for Mac Users: for "Make sure that you have or install ssh client on local machine (usually exists):", if you use MacOS, you will do the following:
+        - Go to `System Preferences` > `Sharing` and check the box for `[x] Remote Login` and select only your user profile under "Allow access for"
+
+- Install the [Remote Development Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+
+- Login To AWS and to go `ec2` instances. 
+    - create an instance ( Same as tutorial below = `ml.t3.medium`)
+
+    - Under Networking: open port 22 for my ip
+    ...
+    ...
+
+- From VS code (after pem file saved and ssh config made)
+    - Cntrl+SHift+P: Remote-SSH: Connect to Host
+
+ 
+___
+> Original Readme Below:
+___
 # AIM427-Take an ML from idea to production using Amazon SageMaker
 
 #### Use following url to sign in into an AWS Account. Use the hash provided as the login credential. 
@@ -148,6 +184,7 @@ We start from the `base` image, add the code directory to our path, copy the cod
 #### Note: Slow down and read the below instruction very carefully. The next command(aws ecr get-login...) is a two step process. First, run the below command(aws ecr get-login...); Second, copy output of command(aws ecr get-login...) and run it as a command. 
 
 Run the following docker login command
+>### JMI NOTE: FIRST RUN `aws configure` to enter access key and secret. 
 
 Step 1: 
 ```
