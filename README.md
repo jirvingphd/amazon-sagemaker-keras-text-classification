@@ -10,8 +10,10 @@
 
 
 - Turns out this is NOT what we need for our purposes, but it had me do several steps of IAM user-generation and attaching specific policies and saving login credientials.
-    - **We will need to have AWS credentials saved on our local machine:**
-        - Instructions https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/obtain-credentials.html
+- **We will need to have AWS credentials saved on our local machine:**
+    - Instructions https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/obtain-credentials.html
+    - Policies Needed? (Confirm):
+        - 
 
 ### Instructions 
 - Follow the instructions from this Medium blog post on ["Connecting VS Code to Develop Machine Learning Models in the AWS Cloud".](https://medium.com/@guyernest/connecting-vs-code-to-develop-machine-learning-models-in-the-aws-cloud-aa1ebd16f890)
